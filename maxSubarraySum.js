@@ -2,7 +2,7 @@
 
 // Note that a subarray must consist of consecutive elements fromt the original array.
 
-const maxSubarraySum = (arr, num) => {
+const maxSubarraySum = (nums, sum) => {
 	let maxSum = 0;
 	let tempSum = 0;
 
