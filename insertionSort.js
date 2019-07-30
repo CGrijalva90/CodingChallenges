@@ -5,10 +5,15 @@
 
 const insertionSort = arr => {
 	for (let i = 1; i < arr.length; i++) {
-		for (let j = 0; j < i; j++) {
-			if (arr[i] < arr[j]) {
-				let temp = arr.splice(i, 1);
-				arr.splice(j, 0, temp[0])
+		currentVal = arr[i]
+		prev = i - 1;
+		while(prev >= 0) {
+			if (currentVal < arr[prev]) {
+				arr[prev + 1] = arr[prev];
+				arr[prev] = currentVal;
+				prev--;
+			} else {
+				break;
 			}
 		}
 	}
