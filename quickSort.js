@@ -1,19 +1,22 @@
 const pivot = (arr, start=0, end=arr.length+1) => {
-	const swap = (arr, i, j) => {
-		let temp = arr[i];
-		arr[i] = arr[j]
-		arr[j] = temp;
-	}
-	let pivot = arr[start];
-	let swapIndex = start;
+  const swap = (array, i, j) => {
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 
-	for(let i = start + 1; i < arr.length; i++) {
-		if (pivot > arr[i]) {
-			swapIndex++;
-			swap(arr, swapIndex, i);
-			console.log(arr)
-		}
-	}
-	swap(arr, start, swapIndex)
-	return swapIndex
+  var pivot = arr[start];
+  var swapIdx = start;
+
+  for(var i = start + 1; i < arr.length; i++){
+    if(pivot > arr[i]){
+      swapIdx++;
+			console.log(`swapping: ${arr[swapIdx]} for ${arr[i]}`)
+      swap(arr,swapIdx,i);
+    }
+		console.log(arr)
+  }
+  swap(arr,start,swapIdx);
+  return swapIdx;
 }
+
