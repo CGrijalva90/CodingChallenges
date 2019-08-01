@@ -19,3 +19,18 @@ const mostDigits = nums => {
 	return maxDigits
 }
 
+const radixSort = nums => {
+	const maxDigitCount = mostDigits(nums);
+	for (k = 0; k < maxDigitCount; k++) {
+		let digitBuckets = Array.from({length: 10}, () => []);
+
+		for (let i = 0; i < nums.length; i++) {
+			let digit = getDigit(nums[i], k)
+			digitBuckets[digit].push(nums[i]);
+		}
+		nums = [].concat(...digitBuckets)
+	}
+	return nums
+};
+
+radixSort([1, 243423, 3, 23, 5, 43])
