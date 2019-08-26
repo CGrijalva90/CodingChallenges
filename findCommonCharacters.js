@@ -14,14 +14,9 @@ var commonChars = function(A) {
       if(!A[i].includes(j)){
         break;
       }else{
-				console.log('A[i] before: ', A[i])
         A[i] = A[i].replace(j,'');
-				console.log('A[i] after: ', A[i])
-				console.log('j is: ', j)
       }
     }
-		console.log(A)
-		console.log('********************')
     if(i === lens){
       res.push(j);
     }
